@@ -1,0 +1,14 @@
+Object cloning:
+    - Object cloning is a way to create exact copy of an object.
+    - It is achieved by implementing Cloneable interface.
+    - It is a shallow copy.
+    - It is a bit faster than creating a new object using new keyword.
+    - It is a bit risky because it involves typecasting.
+    - It is not recommended to use clone() method to create a new object.
+    4 types of cloning:
+        1. Shallow cloning
+        2. Deep cloning
+        3. Copy constructor
+        4. Serialization
+    - Initially cvloned object is exactly same as original object. But if we change the cloned object, original object will not be affected.
+    - If we change the original object, cloned object will not be affected.
