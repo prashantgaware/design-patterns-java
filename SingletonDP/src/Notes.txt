@@ -10,5 +10,13 @@ Object cloning:
         2. Deep cloning
         3. Copy constructor
         4. Serialization
-    - Initially cvloned object is exactly same as original object. But if we change the cloned object, original object will not be affected.
+    - Initially cloned object is exactly same as original object. But if we change the cloned object, original object will not be affected.
     - If we change the original object, cloned object will not be affected.
+
+    - When object is created using as cloning, constructor is not called.
+    - but when we create object using new keyword, constructor is called.
+    - Generally developers dont directly use Cloneable interface. They use copy constructor or serialization.
+
+    - The clone() is proteted method in Object class. So, we need to override it in our class.
+    - If we dont override clone() method in our class, then we will get CloneNotSupportedException.
+    - 
