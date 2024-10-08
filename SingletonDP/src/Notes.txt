@@ -27,3 +27,55 @@ Reflection API:
     - It is used to instantiate classes, invoke methods, get/set field values at runtime.
     - It is used to create dynamic proxy, get annotations, get super class, get interfaces,
       get package, get constructors, get methods, get fields, get modifiers, get annotations
+
+
+Different approaches of developing perfect singleton class:
+    1. Eager initialization
+    2. Static block initialization
+    3. Lazy initialization
+    4. Thread safe singleton
+    5. Bill Pugh Singleton Implementation
+    6. Enum Singleton
+    7. Serialization and Deserialization
+    8. Reflection
+    9. Cloning
+    10. Double checked locking
+    11. Using volatile keyword
+    12. Using inner static helper class
+    13. Using enum
+    14. Using static factory method
+    15. Using single element enum
+    16. Using single element enum with static factory method
+    17. Using single element enum with static factory method and lazy initialization
+    18. Using single element enum with static factory method and eager initialization
+    19. Using single element enum with static factory method and double checked locking
+    20. Using single element enum with static factory method and volatile keyword
+    21. Using single element enum with static factory method and inner static helper class
+    22. Using single element enum with static factory method and reflection
+    23. Using single element enum with static factory method and cloning
+    24. Using single element enum with static factory method and serialization and deserialization
+    25. Using single element enum with static factory method and thread safe singleton
+    26. Using single element enum with static factory method and Bill Pugh Singleton Implementation
+    27. Using single element enum with static factory method and eager initialization
+    28. Using single element enum with static factory method and static block initialization
+    29. Using single element enum with static factory method and lazy initialization
+
+
+Enum based singleton class:
+    - Enum based singleton class is the best
+    - It is thread safe
+    - It is serialization safe
+    - It is reflection safe
+    - It is cloning safe
+    - It is lazy initialization
+    - Every enum is class itself and it is loaded by JVM only once.
+    - Enum based singleton class is created by using enum keyword.
+    - Enum based singleton class is created by using single element enum.
+    - ex PrinterEnum --> java.lang.Enum --> java.lang.Object
+    - Enum is abstract class and it is parent class of all enums.
+    - Enum is direct child class of Object class.
+    - Enum is final class and it is not allowed to extend.
+    - Enum is thread safe and it is created by using static block.
+    - Enum implements Serializable, Comparable and Cloneable interfaces.
+    - So enums are serializable, comparable and cloneable.
+
