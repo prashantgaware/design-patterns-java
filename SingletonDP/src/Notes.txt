@@ -79,3 +79,23 @@ Enum based singleton class:
     - Enum implements Serializable, Comparable and Cloneable interfaces.
     - So enums are serializable, comparable and cloneable.
 
+Why Enum based singleton class is good though we are writing less code?
+    - bcos of eager instatiation is happening, there wont be any multithreading issues.
+    - is easy to develop with min coding standard.
+    - the clone() method is made as final in Enum class. So, we cannot override it.
+    - so clone() cannot be called on the enum constants. hence we cannot do cloning.
+    - every enum is serializable by default. So, we dont need to implement Serializable interface.
+    - so serialization is taken care by JVM.
+    - but we attempt deserialize the enum, it will return already available object/constant.
+    - ie. somewjere readResolve() method is implemented in Enum class.
+    - for enums, we cannot create object using reflection. So, reflection is taken care by JVM.
+    - bcos enums cannot have constructor with public or protected access modifier.
+    - so, we cannot create object using reflection.
+
+
+Enum based singleton class limitiations:
+    - we cannot apply oops feature like extends, etc
+    - we cannot place static, instance member variables in enums.
+    - cannot place serial version uid whilwe working with enums.
+    - eager initialization is not good. bcos it will create object even if we dont use it.
+

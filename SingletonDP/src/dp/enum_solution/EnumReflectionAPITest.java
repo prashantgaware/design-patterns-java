@@ -27,6 +27,10 @@ public class EnumReflectionAPITest {
          * printer2 == printer3 : false
          * printer1 == printer3 : false
          *
+         * Exception in thread "main" java.lang.IllegalAccessException:
+         * Class dp.enum_solution.EnumReflectionAPITest can not access a member of class dp.enum_solution.Printer
+         * with modifiers "private"
+         *
          * Explanation:
          * 1. We are using reflection API to access the private constructor of the Printer class.
          * 2. We are creating 3 instances of the Printer class using reflection API.
