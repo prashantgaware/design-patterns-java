@@ -19,4 +19,11 @@ Object cloning:
 
     - The clone() is proteted method in Object class. So, we need to override it in our class.
     - If we dont override clone() method in our class, then we will get CloneNotSupportedException.
-    - 
+
+
+Reflection API:
+    - Reflection API is used to inspect or modify runtime behavior of applications.
+    - It is used to inspect classes, interfaces, fields, methods at runtime.
+    - It is used to instantiate classes, invoke methods, get/set field values at runtime.
+    - It is used to create dynamic proxy, get annotations, get super class, get interfaces,
+      get package, get constructors, get methods, get fields, get modifiers, get annotations
