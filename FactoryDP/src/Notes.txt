@@ -55,4 +55,11 @@ Note:
     => if we remove a class, then we need to modify client code to remove object creation for that class.
 
 
+## Solution
+    - Provide a factory class to all clients to create object for each class.
+    - factory class will be having a stattic/non static method to create object for each class.
+    - client will call factory method to create object for each class.
+    - client will be passing the type of object to be created to factory method.
+    - factory method will create object for the type passed and return the object to client.
+    - client will be using the object returned by factory method.
 
