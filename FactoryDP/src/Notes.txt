@@ -1,0 +1,58 @@
+Factory Design Pattern:
+
+    - Factory Design Pattern is a Creational Design Pattern.
+    - Factory Design Pattern is used to create objects without exposing the object creation logic.
+    - Factory Design Pattern is used when we have a super class with multiple sub-classes and based on input,
+        we need to return one of the sub-class.
+    - Factory Design Pattern provides approach to code for interface rather than implementation.
+    - Factory Design Pattern removes the instantiation of actual implementation classes from client code.
+    - Factory Design Pattern makes our code more robust, less coupled and easy to extend. For example, we can easily add
+        another product type in future.
+    - Factory Design Pattern provides abstraction between implementation and client classes through inheritance.
+    - According to Gang of Four (GOF), the Factory Design Pattern states that A factory is an object which
+        is used for creating other objects. In technical terms, we can say that a factory is a class with a method.
+        That method will create and return different types of objects based on the input parameter, it received.
+    -In simple words, if we have a superclass and n number of subclasses, and based on the data provided,
+        if we have to create and return the object of one of the subclasses, then we need to use the Factory
+        Design Pattern in Java.
+    - Factory Design Pattern is also known as Factory Method Design Pattern.
+    - Factory Design Pattern is one of the most used design patterns in Java.
+
+Note:
+    The Factory design pattern offers valuable advantages in encapsulating object creation,
+    promoting loose coupling, enhancing flexibility and extensibility, centralizing creation logic,
+    and encouraging dependency inversion. Its benefits include encapsulation and abstraction, loose coupling,
+    flexibility, centralized object creation, and adherence to the Dependency Inversion Principle. However, it is
+    important to consider potential drawbacks, including increased complexity, coupling between the factory and concrete
+    implementations, limited dynamic object creation, and maintenance overhead. By carefully evaluating the
+    requirements of the system and considering trade-offs, developers can leverage the Factory pattern to create
+    objects in a flexible and maintainable manner, promoting code reuse and modularity.
+
+    Ex.
+        1. DriverManager.getConnection() method in JDBC API.
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "root");
+        2. Calendar.getInstance() method in Java.
+            Calendar calendar = Calendar.getInstance();
+        3. NumberFormat.getInstance() method in Java.
+            NumberFormat numberFormat = NumberFormat.getInstance();
+        4. factory.getBean() method in Spring Framework.
+            ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+            Employee employee = (Employee) context.getBean("employee");
+
+    # Most of the JDBC methods are factory methods.
+        ex. DriverManager.getConnection(), DriverManager.getDriver(), DriverManager.getDrivers(), DriverManager.getURL()
+            Statement.executeQuery(), Statement.executeUpdate(), Statement.executeBatch(), Statement.executeLargeBatch()
+
+## Problem Statement:
+   ==================
+
+    We have several related classes (classes with common interfaces and common superclasses) making client creating
+    object for each class difficult. Making it burden on client application.
+
+    => every client must know about all the classes and how to create object for each class.
+    => creating multiple objects for different classes and using only few of them is wastage of resources.
+    => if we add new class, then we need to modify client code to create object for new class.
+    => if we remove a class, then we need to modify client code to remove object creation for that class.
+
+
+
