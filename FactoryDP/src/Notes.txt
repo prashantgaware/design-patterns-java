@@ -63,3 +63,59 @@ Note:
     - factory method will create object for the type passed and return the object to client.
     - client will be using the object returned by factory method.
 
+
+## What is factory method:
+    - the method that is capable of creating or returning its own object or related class objects
+    or unrelated class objects is called factory method.
+    - Different types of factory methods:
+        1. Static factory method
+            - invokable on class name
+            - ex.   1. DriverManager.getConnection() : returning its own claas object
+                    2. Calendar.getInstance() : returning its own class object
+                    3. NumberFormat.getInstance() : returning its own class object
+                    4. Unrelated class objects: ex. Boolean.valueOf(), Integer.valueOf(), Double.valueOf(), System.getProperty()
+
+        2. Non-static factory method
+            - invokable on object
+            - ex.   1. factory.getBean() : returning its own class object
+                    2. factory.getDriver() : returning its own class object
+                    3. factory.getDrivers() : returning its own class object
+                    4. factory.getURL() : returning its own class object
+                    5. String s = new String("Hello"); s.toUpperCase() : returning its own class object
+                    6. StringBuffer sb = new StringBuffer("Hello"); String s = sb.toString() : returning unrelated class object
+
+## Difference b/w factory method and factory design pattern
+    - factory method is a method that is capable of creating or returning its own object or related class objects
+    or unrelated class objects.
+    - factory design pattern is a creational design pattern that provides an interface for creating objects in a superclass,
+    but allows subclasses to alter the type of objects that will be created.
+    - Factory DP uses factory method in controlled manner to create objects.
+
+    Ex. Properties props = System.getProperties(); // factory method but not factory design pattern
+
+        Connection con = DriverManager.getConnection(); // factory method cum factory DP
+        Connection con = factory.getConnection(); // factory design pattern
+
+## 3 types of Factory Design Patterns:
+    1. Simple Factory Design Pattern
+    2. Factory Method Design Pattern
+    3. Abstract Factory Design Pattern
+
+### Factory method design pattern :
+    - if multiple factories are creating and returning same family class objects( related classes of having common super class)
+    then we need factory method design pattern to make all factories to return same family class objects having sma standards.
+    - Ex.
+                           BajajFactory
+                         /      |       \
+                        /       |        \
+                     Pulsar  Discover  Platina
+        these are related classes having common super class or commonly implemented interfaces.
+
+
+
+
+
+
+
+
+
