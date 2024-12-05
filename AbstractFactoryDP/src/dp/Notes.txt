@@ -1,0 +1,16 @@
+## Abstract Factory Design Pattern:
+    - if multiple factories are creating and returning multiple family class objects(related classes of having common super class)
+    then we need abstract factory design pattern to make all factories to return multiple family class objects having same standards.
+    - Ex.
+                            BajajFactory
+                          /      |       \
+                         /       |        \
+                      Pulsar  Discover  Platina
+         these are related classes having common super class or commonly implemented interfaces.
+         - BajajFactory is a factory that is capable of creating and returning multiple family class objects.
+         - Pulsar, Discover, Platina are related classes having common super class or commonly implemented interfaces.
+    - It is also called as factory of factories.
+    - It is a creational design pattern.
+    - It is used to create a set of related objects.
+    - Abstract factory makes all the required and related objects are coming from single factory, sp that
+    we can avoid problems of getting relate dobjects from different factories.
