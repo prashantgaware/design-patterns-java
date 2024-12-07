@@ -13,4 +13,16 @@
     - It is a creational design pattern.
     - It is used to create a set of related objects.
     - Abstract factory makes all the required and related objects are coming from single factory, sp that
-    we can avoid problems of getting relate dobjects from different factories.
+    we can avoid problems of getting related objects from different factories.
+
+
+    # problem 1:
+    - here the client is getting freedom to use two different factories to create the objects of the same families
+    classes, ie, he is able to save student info in DB s/w and course info in excel file by getting
+    two dao objects using two different objects
+    - ex. purchasing car from suzuki and accessories from mahindra
+
+    # solution 1:
+    - to solve this problem use abstract factory which is factpry of factories or super factory which provides env to
+    create and return onr of the several factory class objects for client apps, and client apps uses that objects
+    to create all objects of the same family classes.
