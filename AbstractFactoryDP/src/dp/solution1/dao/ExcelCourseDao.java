@@ -1,4 +1,4 @@
-package dp.solution1.dao.problem1.dao;
+package dp.solution1.dao;
 
 public class ExcelCourseDao implements IDAO {
 
