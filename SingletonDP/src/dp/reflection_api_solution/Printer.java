@@ -1,4 +1,4 @@
-package dp.reflection_api_solution.reflection_api;
+package dp.reflection_api_solution;
 
 public class Printer {
     // This is the instance of the Printer class.

@@ -1,4 +1,4 @@
-package dp.reflection_api_solution.reflection_api;
+package dp.reflection_api_solution;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -14,7 +14,7 @@ public class ReflectionAPITest_Solution {
     public static void main(String[] args) {
         try {
             // Load the class
-            Class<?> c = Class.forName("dp.reflection_api_solution.reflection_api.Printer");
+            Class<?> c = Class.forName("dp.reflection_api_solution.Printer");
 
             // Get the constructors of the class
             Constructor constructors[] = c.getDeclaredConstructors();
