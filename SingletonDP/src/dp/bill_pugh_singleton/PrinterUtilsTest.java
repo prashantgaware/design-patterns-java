@@ -1,11 +1,11 @@
 package dp.bill_pugh_singleton;
 
-import dp.eager_instantiation.TicketBookingOp;
+//import dp.eager_instantiation.TicketBookingOp;
 
 public class PrinterUtilsTest {
 
     public static void main(String[] args) {
-        dp.eager_instantiation.TicketBookingOp operation = new TicketBookingOp();
+        TicketBookingOp operation = new TicketBookingOp();
         Thread th1 = new Thread(operation);
         Thread th2 = new Thread(operation);
         Thread th3 = new Thread(operation);
