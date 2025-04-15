@@ -1,0 +1,85 @@
+Template Method Design Pattern:
+===============================
+
+- The Template Method Design Pattern is a behavioral design pattern that defines the skeleton of an algorithm in a base class but allows subclasses to override specific steps of the algorithm without changing its structure.
+- It is used to define a common algorithm in a base class and let subclasses provide specific implementations for certain steps of the algorithm.
+- The pattern is useful when you have multiple classes that share a common algorithm but differ in some specific steps.
+- It promotes code reuse and helps to avoid code duplication by allowing subclasses to inherit the common algorithm from the base class.
+- The pattern consists of two main components:
+  1. Abstract Class: This class defines the template method, which is the algorithm's skeleton. It contains the common steps of the algorithm and may call abstract methods that subclasses must implement.
+  2. Concrete Class: These classes inherit from the abstract class and provide specific implementations for the abstract methods defined in the base class.
+- The template method is usually marked as final to prevent subclasses from overriding it, ensuring that the algorithm's structure remains intact.
+- The pattern is commonly used in frameworks and libraries where the framework defines the overall structure of an algorithm, and the user provides specific implementations for certain steps.
+- The Template Method Design Pattern is often used in scenarios where:
+  - You have a common algorithm that can be reused across multiple classes.
+  - You want to allow subclasses to customize specific steps of the algorithm without changing its overall structure.
+  - You want to promote code reuse and avoid code duplication.
+
+- Example Use Cases:
+    - Data processing pipelines where the overall structure is the same, but the specific processing steps may vary.
+    - Game development where the game loop structure is common, but the specific game logic may differ between different games.
+    - Report generation where the overall report structure is the same, but the content and formatting may vary between different reports.
+
+- Example Code:
+```java
+abstract class DataProcessor {
+    // Template method
+    public final void process() {
+        readData();
+        processData();
+        writeData();
+    }
+
+    protected abstract void readData();
+    protected abstract void processData();
+    protected abstract void writeData();
+}
+class CSVDataProcessor extends DataProcessor {
+    @Override
+    protected void readData() {
+        System.out.println("Reading data from CSV file.");
+    }
+
+    @Override
+    protected void processData() {
+        System.out.println("Processing CSV data.");
+    }
+
+    @Override
+    protected void writeData() {
+        System.out.println("Writing data to CSV file.");
+    }
+}
+class XMLDataProcessor extends DataProcessor {
+    @Override
+    protected void readData() {
+        System.out.println("Reading data from XML file.");
+    }
+
+    @Override
+    protected void processData() {
+        System.out.println("Processing XML data.");
+    }
+
+    @Override
+    protected void writeData() {
+        System.out.println("Writing data to XML file.");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        DataProcessor csvProcessor = new CSVDataProcessor();
+        csvProcessor.process();
+
+        DataProcessor xmlProcessor = new XMLDataProcessor();
+        xmlProcessor.process();
+    }
+}
+```
+
+- In this example, the `DataProcessor` class defines the template method `process()`, which outlines the steps of reading, processing, and writing data. The subclasses `CSVDataProcessor` and `XMLDataProcessor` provide specific implementations for each step of the algorithm.
+- The `process()` method is marked as final to prevent subclasses from overriding it, ensuring that the overall structure of the algorithm remains intact.
+- The `main()` method demonstrates how to use the template method pattern by creating instances of the concrete classes and calling the `process()` method. Each concrete class implements the specific steps of the algorithm while reusing the common structure defined in the base class.
+- The output of the program will show the specific steps being executed for each data processor, demonstrating how the template method pattern allows for customization while maintaining a common algorithm structure.
+- The Template Method Design Pattern is a powerful tool for defining algorithms in a flexible and reusable way, allowing for easy customization and extension of the algorithm's behavior through subclassing.
+- The pattern is widely used in various programming languages and frameworks, making it a valuable addition to any developer's toolkit.
