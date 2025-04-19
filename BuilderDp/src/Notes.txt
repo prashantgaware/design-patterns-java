@@ -1,0 +1,113 @@
+Builder Design Pattern:
+    - The Builder Design Pattern is a creational design pattern that allows for the step-by-step construction of complex objects. It separates the construction of a complex object from its representation, allowing the same construction process to create different representations.
+    - The Builder pattern is particularly useful when an object requires multiple steps to be created, or when the object has many optional parameters.
+    - It promotes code readability and maintainability by providing a clear and fluent interface for constructing objects.
+    - The pattern consists of the following components:
+        1. Builder: This is an interface or abstract class that defines the methods for creating the parts of the complex object.
+        2. ConcreteBuilder: This class implements the Builder interface and provides specific implementations for creating the parts of the complex object.
+        3. Director: This class is responsible for managing the construction process. It uses a Builder instance to construct the object step by step.
+        4. Product: This is the complex object that is being constructed.
+
+    - The Builder pattern is commonly used in scenarios where:
+        - An object requires multiple steps to be created.
+        - The object has many optional parameters or configurations.
+        - You want to create different representations of the same object using the same construction process.
+    - Example Use Cases:
+        - Building complex UI components with multiple configuration options.
+        - Constructing complex data structures or objects with many attributes.
+        - Creating objects with a large number of optional parameters, where using a constructor with many parameters would be impractical.
+
+    - Example Code:
+    ```java
+    // Product class
+    class House {
+        private String foundation;
+        private String walls;
+        private String roof;
+
+        public void setFoundation(String foundation) {
+            this.foundation = foundation;
+        }
+
+        public void setWalls(String walls) {
+            this.walls = walls;
+        }
+
+        public void setRoof(String roof) {
+            this.roof = roof;
+        }
+
+        @Override
+        public String toString() {
+            return "House{" +
+                    "foundation='" + foundation + '\'' +
+                    ", walls='" + walls + '\'' +
+                    ", roof='" + roof + '\'' +
+                    '}';
+        }
+    }
+    // Builder interface
+    interface HouseBuilder {
+        void buildFoundation();
+        void buildWalls();
+        void buildRoof();
+        House getHouse();
+    }
+    // ConcreteBuilder class
+    class ConcreteHouseBuilder implements HouseBuilder {
+        private House house;
+
+        public ConcreteHouseBuilder() {
+            this.house = new House();
+        }
+
+        @Override
+        public void buildFoundation() {
+            house.setFoundation("Concrete Foundation");
+        }
+
+        @Override
+        public void buildWalls() {
+            house.setWalls("Brick Walls");
+        }
+
+        @Override
+        public void buildRoof() {
+            house.setRoof("Tile Roof");
+        }
+
+        @Override
+        public House getHouse() {
+            return house;
+        }
+    }
+    // Director class
+    class HouseDirector {
+        private HouseBuilder builder;
+
+        public HouseDirector(HouseBuilder builder) {
+            this.builder = builder;
+        }
+
+        public House constructHouse() {
+            builder.buildFoundation();
+            builder.buildWalls();
+            builder.buildRoof();
+            return builder.getHouse();
+        }
+    }
+
+    // Client code
+    public class BuilderPatternExample {
+        public static void main(String[] args) {
+            HouseBuilder builder = new ConcreteHouseBuilder();
+            HouseDirector director = new HouseDirector(builder);
+            House house = director.constructHouse();
+            System.out.println(house);
+        }
+    }
+    ```
+
+    - In this example, the `House` class represents the complex object being constructed. The `HouseBuilder` interface defines the methods for building different parts of the house. The `ConcreteHouseBuilder` class implements the `HouseBuilder` interface and provides specific implementations for building the foundation, walls, and roof. The `HouseDirector` class manages the construction process using a `HouseBuilder` instance.
+    - The client code creates a `ConcreteHouseBuilder`, passes it to the `HouseDirector`, and calls the `constructHouse()` method to build the house. Finally, it prints the constructed house.
+    - This example demonstrates how the Builder pattern allows for a clear and organized way to construct complex objects step by step, while also providing flexibility in the construction process.
