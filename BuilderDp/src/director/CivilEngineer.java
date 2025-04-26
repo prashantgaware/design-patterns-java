@@ -47,6 +47,7 @@ public class CivilEngineer {
      * @return the constructed House object
      */
     public House getHouse() {
+        System.out.println("Inside CivilEngineer getHouse method");
         return houseBuilder.getHouse();
     }
 }

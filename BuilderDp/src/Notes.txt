@@ -111,3 +111,19 @@ Builder Design Pattern:
     - In this example, the `House` class represents the complex object being constructed. The `HouseBuilder` interface defines the methods for building different parts of the house. The `ConcreteHouseBuilder` class implements the `HouseBuilder` interface and provides specific implementations for building the foundation, walls, and roof. The `HouseDirector` class manages the construction process using a `HouseBuilder` instance.
     - The client code creates a `ConcreteHouseBuilder`, passes it to the `HouseDirector`, and calls the `constructHouse()` method to build the house. Finally, it prints the constructed house.
     - This example demonstrates how the Builder pattern allows for a clear and organized way to construct complex objects step by step, while also providing flexibility in the construction process.
+
+
+- Realtime example:
+    - Building a complex meal with multiple courses (appetizer, main course, dessert) using a meal builder.
+    - Constructing a complex document (like an HTML page) with various sections (header, body, footer) using a document builder.
+    - Creating a complex configuration object for a software application with multiple settings and options using a configuration builder.
+
+    ex 1.
+    ```java
+    Configuration config = new Configuration.Builder()
+            .setHost("localhost")
+            .setPort(8080)
+            .setUsername("admin")
+            .setPassword("password")
+            .build();
+    ```

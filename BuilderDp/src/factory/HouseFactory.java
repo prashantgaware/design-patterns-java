@@ -19,12 +19,15 @@ public class HouseFactory {
         HouseBuilder builder;
         switch (type) {
             case "wooden":
+                System.out.println("Creating Wooden House");
                 builder = new WoodenHouseBuilder();
                 break;
             case "concrete":
+                System.out.println("Creating Concrete House");
                 builder = new ConcreteHouseBuilder();
                 break;
             case "igloo":
+                System.out.println("Creating Igloo House");
                 builder = new IglooHouseBuilder();
                 break;
             default:
