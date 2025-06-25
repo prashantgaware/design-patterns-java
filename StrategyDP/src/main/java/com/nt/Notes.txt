@@ -1,0 +1,81 @@
+Strategy Design pattern:
+========================
+
+- The Strategy Design Pattern is a behavioral design pattern that enables selecting an algorithm at runtime.
+    It defines a family of algorithms, encapsulates each one, and makes them interchangeable.
+    This allows the algorithm to vary independently from the clients that use it.
+
+- Strategy DP is all about implementing 3 basic principle:
+    1. Favour composition over inheritance.
+    2. Code to interfaces/abstract classes, not concrete classes.
+    3. Code must be open for extension but closed for modification.
+
+## Favour composition over inheritance:
+    - Composition is a design principle where a class is composed
+        of one or more objects that implement a specific behavior.
+    Ex. HAS-A relationship.
+    class A {
+        private B b; // HAS-A relationship
+    }
+
+    Class B {}
+
+    - Inheritance is a design principle where a class inherits behavior from a parent class.
+    Ex. IS-A relationship.
+    class B {}
+    class A extends B { // IS-A relationship
+    }
+
+## Code to interfaces/abstract classes, not concrete classes:
+    - This principle encourages the use of interfaces or abstract classes
+        to define the behavior of a class, rather than using concrete classes.
+    - This allows for greater flexibility and easier testing.
+    - It also allows for easier swapping of implementations without changing the client code.
+    Ex.
+    interface Strategy {
+        void execute();
+    }
+    class ConcreteStrategyA implements Strategy {
+        @Override
+        public void execute() {
+            // Implementation for strategy A
+        }
+    }
+    class ConcreteStrategyB implements Strategy {
+        @Override
+        public void execute() {
+            // Implementation for strategy B
+        }
+    }
+    class Context {
+        private Strategy strategy;
+
+        public Context(Strategy strategy) {
+            this.strategy = strategy;
+        }
+
+        public void executeStrategy() {
+            strategy.execute();
+        }
+    }
+
+    // Usage:
+    public class Main {
+        public static void main(String[] args) {
+            Context context = new Context(new ConcreteStrategyA());
+            context.executeStrategy(); // Executes strategy A
+
+            context = new Context(new ConcreteStrategyB());
+            context.executeStrategy(); // Executes strategy B
+        }
+    }
+
+    Explanation of the code:
+    1. The `Strategy` interface defines a method `execute()`.
+    2. `ConcreteStrategyA` and `ConcreteStrategyB` implement the `Strategy` interface,
+       providing their own implementations of the `execute()` method.
+    3. The `Context` class holds a reference to a `Strategy` object and provides a method
+         `executeStrategy()` that calls the `execute()` method of the current strategy.
+    4. In the `Main` class, we create a `Context` object with a specific strategy
+         and call `executeStrategy()`, which executes the strategy's implementation.
+
