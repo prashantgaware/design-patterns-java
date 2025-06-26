@@ -12,7 +12,7 @@ public class Vehicle {
     }
 
 
-    public void drive() {
-        driveStrategy.drive();
+    public String drive() {
+        return driveStrategy.drive();
     }
 }
