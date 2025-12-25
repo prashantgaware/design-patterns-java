@@ -20,7 +20,7 @@ package dp.bill_pugh_singleton;
 
 public class PrinterUtils {
 
-    public PrinterUtils() {
+    private PrinterUtils() {
         System.out.println("PrinterUtils.PrinterUtils");
     }
 

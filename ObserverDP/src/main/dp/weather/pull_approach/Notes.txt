@@ -1,0 +1,18 @@
+Pull Approach to Observer Design Pattern:
+    - In the pull approach, observers request data from the subject when they need it.
+    - The subject does not send data to observers; instead, it provides a way for observers to access the data.
+    - This approach can be more efficient in scenarios where observers do not need constant updates.
+    - Observers typically call a method on the subject to retrieve the latest state or data.
+    - This can lead to reduced network traffic and processing overhead, especially if updates are infrequent.
+    - However, it may introduce latency since observers have to actively request data rather than receiving it
+     immediately when it changes.
+    - The pull approach is useful in scenarios where observers have varying needs for data or when the subject's state
+     changes infrequently.
+    - It is important to ensure that observers handle the timing of their requests appropriately to avoid overwhelming
+     the subject with too many requests.
+    - Example use cases include caching mechanisms, on-demand data retrieval systems, and scenarios where observers need
+     to filter or process data before requesting it.
+    - Overall, the pull approach provides flexibility and can optimize resource usage in certain situations compared
+     to the push approach.
+    - In summary, the pull approach allows observers to control when and how they receive data from the subject,
+     making it suitable for specific use cases where efficiency and flexibility are prioritized.
